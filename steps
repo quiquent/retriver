@@ -1,0 +1,15 @@
+docker run -itd --name itsearchno -v "$PWD":/app -w /app python:3
+docker exec -it itsearchno bash
+
+apt update
+apt install postgresql-13
+
+service postgresql status
+service postgresql start
+service postgresql status
+
+su postgres
+psql
+\l
+
+#create db postgres with user
